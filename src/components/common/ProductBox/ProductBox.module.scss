@@ -29,10 +29,11 @@
     }
 
     .buttons {
-      display: flex;
+      display: none;
       justify-content: space-between;
     }
   }
+
 
   .content {
     text-align: center;
@@ -76,3 +77,14 @@
     align-items: center;
   }
 }
+
+.root:hover {
+  .buttons {
+    display: flex;
+  }   
+
+  .priceButton {
+    background: red;
+  }
+}
+
