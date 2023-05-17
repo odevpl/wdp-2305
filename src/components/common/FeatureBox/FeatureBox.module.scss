@@ -5,6 +5,7 @@
   text-align: center;
   margin-top: 40px;
 
+
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
@@ -51,28 +52,37 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
-
+    
+    
     h5 {
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
+    
+  
   }
 
-  &.active {
+  &.active, &:hover {
+  
     .iconWrapper {
       color: #ffffff;
+
 
       &::after {
         background-color: $primary;
         border-color: $primary;
       }
+      &::before {
+        border-color: $primary;
+      }
     }
-
+    
     .content {
       color: $primary;
     }
   }
+}
+
+.link:hover {
+  text-decoration: none;
 }
