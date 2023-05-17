@@ -82,8 +82,10 @@ import { favoriteProduct } from '../../../redux/productsRedux';
       </div>
       </div>
     </div>
+
   );
 };
+
 
 
 ProductBox.propTypes = {
