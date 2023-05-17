@@ -69,7 +69,7 @@ const ProductBox = ({
           </div>
         )}
         <div className={styles.price}>
-          <Button noHover className={styles.priceButton} variant='small'>
+          <Button className={styles.priceButton} noHover variant='small'>
             $ {price}
           </Button>
         </div>
