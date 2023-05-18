@@ -80,6 +80,8 @@
     .content {
       color: $primary;
     }
+    transition: $button-transition;
+    animation: animation $button-animation-time forwards;
   }
 }
 
