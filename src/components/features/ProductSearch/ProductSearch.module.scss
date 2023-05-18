@@ -11,12 +11,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    min-width: 205px;
 
     .icon:first-child {
       color: $primary;
-      position: absolute;
+      position: relative;
       left: 10px;
       z-index: 0;
+      margin-right: 5px;
     }
 
     .icon:last-child {
@@ -25,14 +27,52 @@
       z-index: 0;
     }
 
-    select {
+    .dropdown {
+      margin:0 auto;
+    }
+
+    .dropdown-btn {
       -webkit-appearance: none;
       border: 0;
       background-color: transparent;
-      padding: 5px 30px 5px 35px;
+      color: $text-color;
       position: relative;
+      border: none;
+      box-shadow: none;
       z-index: 1;
+      max-width: 195px;
+      overflow: hidden;
     }
+    .submenu-dropdown {
+      position: relative;
+    }
+
+    .submenu-dropdown>div.submenu {
+      display: none ;
+      top:0;
+      left:100% !important;
+      transform: none !important;
+    }
+
+    .submenu-select .icon{
+      position: relative;
+      margin-left: 7px;
+      color: $text-color;
+    }
+
+    .submenu-dropdown:hover {
+      .submenu{
+        display: block;
+      }
+    }
+
+    .dropdown>.dropdown-btn:focus, .dropdown>.dropdown-btn:active {
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        color: $text-color;
+      }
+
   }
 
   .searchField {
