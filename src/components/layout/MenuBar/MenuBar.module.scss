@@ -41,6 +41,8 @@
         background-color: $primary;
         color: #ffffff;
         border-color: $primary;
+        transition: $button-transition;
+        animation: animation $button-animation-time forwards;
       }
 
       &.active {

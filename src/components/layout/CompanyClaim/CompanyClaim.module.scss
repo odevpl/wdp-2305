@@ -65,6 +65,8 @@
       &:hover {
         .cartIcon {
           background-color: lighten($primary, 10%);
+          transition: $button-transition;
+          animation: animation $button-animation-time forwards;
         }
       }
     }

@@ -85,4 +85,6 @@
 
 .link:hover {
   text-decoration: none;
+  transition: $button-transition;
+  animation: animation $button-animation-time forwards;
 }
