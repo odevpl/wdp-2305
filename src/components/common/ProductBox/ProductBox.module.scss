@@ -84,4 +84,20 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .favorite {
+    background-color: #2a2a2a;
+    svg{
+      color:red;
+      transform: scale(1.6);
+    }
+  }
+
+  .compare {
+    background-color: #2a2a2a;
+    svg {
+      color: #f39c12;
+      transform: scale(1.5) ;
+    }
+  }
 }
