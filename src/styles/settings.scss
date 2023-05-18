@@ -1,13 +1,39 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+/* COLORS FOR CUSTOMIZATION BY THE CLIENT */
+$royalBlue: #4169e1;
+$oliveGreen: #556b2f;
+$plum: #dda0dd;
+$teal: #008080;
+$coral: #ff7f50;
+$extremelyDarkGray: #080808;
+$lightGoldenBrown: #e5b982;
+$lightCharcoalGray: #545454;
+$lightCharcoalGray: #444444;
+$lightGray: #555555;
+$lightGray: #4c4c4c;
+$darkGoldenBrown: #a67329;
+$veryDarkGray: #111111;
+$veryDarkGoldenBrown: #754b1e;
+$veryDarkCharcoalGray: #1e1e1e;
+$veryDarkCharcoalGray: #141414;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+/* COLORS USED IN THE PROJECT */
+$goldenBrown: #d58e32;
+$darkCharcoalGray: #434343;
+$charcoalGray: #363636;
+$darkGray: #2a2a2a;
+$veryDarkGray: #292929;
 
-$primary: #d58e32;
 
-$text-color: #2a2a2a;
+$header-topbar-bg: $darkCharcoalGray;
+$header-bg: $charcoalGray;
 
-$form-border-color: #292929;
+$footer-claim-bg: $darkGray;
+$footer-bg: $charcoalGray;
+
+$primary: $goldenBrown;
+
+$text-color: $darkGray;
+
+$form-border-color: $veryDarkGray;
