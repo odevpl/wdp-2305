@@ -30,7 +30,11 @@ const MenuBar = ({ children }) => {
   }, [isListOpen]);
 
   return (
-    <div className={styles.root}>
+    <div
+      className={`${styles.root} ${
+        isListOpen && window.innerWidth < 576 ? styles.one : ''
+      }`}
+    >
       <div className='container pb-5 pb-xl-0 d-inline'>
         <div className='row justify-content-center'>
           <div className='col-lg d-flex justify-content-center order-1 order-xl-0 pt-2 pt-xl-0'>
@@ -44,7 +48,7 @@ const MenuBar = ({ children }) => {
 
           <div className={'col-auto ' + styles.menu}>
             {isListOpen && (
-              <ul className={styles.list}>
+              <ul className={styles.list + ' flex-column flex-sm-row'}>
                 <li>
                   <a href='#' className={styles.active}>
                     Home
