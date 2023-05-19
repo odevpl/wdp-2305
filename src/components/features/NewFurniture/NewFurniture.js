@@ -100,20 +100,19 @@ class NewFurniture extends Component {
               styles['products-view']
             } row`}
           >
-              {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-12 col-sm-4 col-lg-3'>
+                <ProductBox {...item} />
+              </div>
+            ))}
           </div>
+        </div>
         </div>
       </SwipeableComponent>
     );
   }
-}
+  }
+
 
 NewFurniture.propTypes = {
   categories: PropTypes.arrayOf(
