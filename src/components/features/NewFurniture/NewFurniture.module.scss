@@ -33,6 +33,7 @@
 
     .menu {
       text-align: center;
+      cursor: pointer;
       ul {
         margin: 0;
         padding: 0;
@@ -97,5 +98,13 @@
         }
       }
     }
+  }
+  .products-view > * {
+    opacity: 0;
+    animation: $fade-in;
+  }
+
+  .products-view.fade-out > * {
+    animation: $fade-out;
   }
 }

@@ -52,18 +52,18 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
-    
-    
+
+
     h5 {
       font-weight: 600;
       margin: 0;
     }
-    
-  
+
+
   }
 
   &.active, &:hover {
-  
+
     .iconWrapper {
       color: #ffffff;
 
@@ -76,7 +76,7 @@
         border-color: $primary;
       }
     }
-    
+
     .content {
       color: $primary;
     }
