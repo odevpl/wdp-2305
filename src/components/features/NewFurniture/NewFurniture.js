@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import SwipeableComponent from '../../common/Swipeable/SwipeableComponent';
+import CompareContainer from '../CompareContainer/CompareContainer';
 
 class NewFurniture extends Component {
   constructor(props) {
@@ -87,6 +88,7 @@ class NewFurniture extends Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
+    const productsToCompare = products.filter(item => item.compare === true);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
