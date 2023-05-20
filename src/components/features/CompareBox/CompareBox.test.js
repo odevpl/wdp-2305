@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ProductBox from './ProductBox';
+import CompareBox from './CompareBox';
 import { Provider } from 'react-redux';
 import store from '../../../redux/store';
 
-describe('Component ProductBox', () => {
+describe('Component CompareBox', () => {
   it('should render without crashing', () => {
     const component = shallow(
       <Provider store={store}>
-        <ProductBox />
+        <CompareBox />
       </Provider>
     );
     expect(component).toBeTruthy();

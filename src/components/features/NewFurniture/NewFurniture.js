@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareContainer from '../CompareContainer/CompareContainer';
 
 class NewFurniture extends React.Component {
   state = {
@@ -24,6 +25,7 @@ class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const productsToCompare = products.filter(item => item.compare === true);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -73,6 +75,9 @@ class NewFurniture extends React.Component {
               </div>
             ))}
           </div>
+          {productsToCompare.length > 0 && (
+            <CompareContainer productsToCompare={productsToCompare} />
+          )}
         </div>
       </div>
     );
