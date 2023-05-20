@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import SwipeableComponent from '../../common/Swipeable/SwipeableComponent';
+import CompareContainer from '../CompareContainer/CompareContainer';
 
 class NewFurniture extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class NewFurniture extends Component {
     this.state = {
       activePage: 0,
       activeCategory: 'bed',
-    fade: false,
+      fade: false,
     };
   }
 
@@ -49,6 +50,7 @@ class NewFurniture extends Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const productsToCompare = products.filter(item => item.compare === true);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -96,10 +98,10 @@ class NewFurniture extends Component {
               </div>
             </div>
             <div
-            className={`${this.state.fade ? styles['fade-out'] : ''} ${
-              styles['products-view']
-            } row`}
-          >
+              className={`${this.state.fade ? styles['fade-out'] : ''} ${
+                styles['products-view']
+              } row`}
+            >
               {categoryProducts
                 .slice(activePage * 8, (activePage + 1) * 8)
                 .map(item => (
@@ -108,6 +110,9 @@ class NewFurniture extends Component {
                   </div>
                 ))}
             </div>
+            {productsToCompare.length > 0 && (
+              <CompareContainer productsToCompare={productsToCompare} />
+            )}
           </div>
         </div>
       </SwipeableComponent>
