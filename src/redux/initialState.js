@@ -227,6 +227,11 @@ const initialState = {
   cart: {
     products: [],
   },
+  promotions: [
+    { id: '1', source: '/images/promotions/1.jpg' },
+    { id: '2', source: '/images/promotions/2.jpg' },
+    { id: '3', source: '/images/promotions/3.jpg' },
+  ],
 };
 
 export default initialState;
