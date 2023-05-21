@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './FeatureBox.module.scss';
 
 const FeatureBox = ({ active, icon, children, href }) => (
-  <a className={styles.link} href={href}>
-    <div className={styles.root + (active ? ' ' + styles.active : '')}>
+  <a className={clsx(styles.link, 'd-flex flex-fill')} href={href}>
+    <div className={clsx(styles.root, active ? ' ' + styles.active : '', 'flex-fill')}>
       {icon && (
         <div className={styles.iconWrapper}>
           <FontAwesomeIcon className={styles.icon} icon={icon} />
