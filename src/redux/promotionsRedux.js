@@ -1,6 +1,9 @@
+import initialState from './initialState';
+
 /* selectors */
-export const getAll = ({ promotions }) => promotions;
-export const getPromotion = ({ promotions }) => promotions.id;
+export const getAllPromotions = () => initialState.promotions;
+export const getPromotion = id =>
+  initialState.promotions.find(promotion => promotion.id === id) || undefined;
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
