@@ -11,7 +11,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, compare }) => (
+const ProductBox = ({ name, price, promo, stars, oldPrice = null, isFavorite, compare }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       {promo && <div className={styles.sale}>{promo}</div>}
@@ -51,10 +51,19 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, compare }) => (
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
-      <div className={styles.price}>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
+      <div className='d-flex '>
+        {oldPrice != null && (
+          <div className={(styles.price, styles.crossed)}>
+            <Button noHover variant='small' className={styles['crossed-button']}>
+              $ {oldPrice}
+            </Button>
+          </div>
+        )}
+        <div className={styles.price}>
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
   </div>
@@ -68,6 +77,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
   compare: PropTypes.bool,
+  oldPrice: PropTypes.number,
 };
 
 export default ProductBox;
