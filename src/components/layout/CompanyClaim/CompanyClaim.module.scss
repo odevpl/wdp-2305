@@ -25,6 +25,18 @@
     }
   }
 
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
   .cart {
     .cartBox {
       display: inline-block;
@@ -74,6 +86,30 @@
           background-color: lighten($primary, 10%);
         }
       }
+    }
+  }
+
+
+  @media (max-width: 767px) {
+    .logo {
+      order: -1;
+    }
+
+    .phoneNumber,
+    .cart {
+      flex-basis: 50%;
+    }
+
+    .cart {
+      order: 1;
+    }
+
+    .phoneNumber {
+      order: 2;
+    }
+
+    .row {
+      display: flex;
     }
   }
 }
