@@ -29,6 +29,24 @@ $veryDarkGray: #292929;
 $header-topbar-bg: $darkCharcoalGray;
 $header-bg: $charcoalGray;
 
+$form-border-color: #292929;
+
+// animations
+$fade-fill-mode: forwards;
+$fade-duration: 0.3s;
+
+@keyframes fade-out{
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+@keyframes fade-in{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+$fade-in: fade-in $fade-duration $fade-fill-mode;
+$fade-out: fade-out $fade-duration $fade-fill-mode;
+
 $footer-claim-bg: $darkGray;
 $footer-bg: $charcoalGray;
 

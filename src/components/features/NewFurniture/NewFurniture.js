@@ -8,14 +8,17 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    fade: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ fade: true });
+    this.setState({ activePage: newPage, fade: false });
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ fade: true });
+    this.setState({ activeCategory: newCategory, fade: false, activePage: 0 });
   }
 
   render() {
@@ -66,7 +69,11 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div
+            className={`${this.state.fade ? styles['fade-out'] : ''} ${
+              styles['products-view']
+            } row`}
+          >
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
                 <ProductBox {...item} />
