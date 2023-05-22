@@ -94,6 +94,8 @@ const ProductBox = ({
   );
 };
 
+export default ProductBox;
+
 ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
