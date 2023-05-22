@@ -41,4 +41,15 @@
       margin-right: 5px;
     }
   }
+
+  .text {
+    display: inline-block;
+  }
+
+  
+  @media (max-width: 767px) {
+    .text {
+      display: none;
+    }
+  }
 }
