@@ -12,7 +12,16 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { favoriteProduct } from '../../../redux/productsRedux';
-   const ProductBox = ({ name, price, promo, stars, favorite, id, oldPrice = null, compare }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  favorite,
+  id,
+  oldPrice = null,
+  compare,
+}) => {
   const dispatch = useDispatch();
 
   const handleClickFavorite = id => {
@@ -67,24 +76,23 @@ import { favoriteProduct } from '../../../redux/productsRedux';
           </Button>
         </div>
         <div className='d-flex '>
-        {oldPrice != null && (
-          <div className={(styles.price, styles.crossed)}>
-            <Button noHover variant='small' className={styles['crossed-button']}>
-              $ {oldPrice}
+          {oldPrice != null && (
+            <div className={(styles.price, styles.crossed)}>
+              <Button noHover variant='small' className={styles['crossed-button']}>
+                $ {oldPrice}
+              </Button>
+            </div>
+          )}
+          <div className={styles.price}>
+            <Button noHover variant='small'>
+              $ {price}
             </Button>
           </div>
-        )}
-        <div className={styles.price}>
-          <Button className={styles.priceButton} noHover variant='small'>
-            $ {price}
-          </Button>
         </div>
-      </div>
       </div>
     </div>
   );
 };
-
 
 ProductBox.propTypes = {
   children: PropTypes.node,
