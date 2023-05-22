@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,8 +11,16 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { favoriteProduct } from '../../../redux/productsRedux';
-
-const ProductBox = ({ name, price, promo, stars, favorite, id, oldPrice = null, compare }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  favorite,
+  id,
+  oldPrice = null,
+  compare,
+}) => {
   const dispatch = useDispatch();
 
   const handleClickFavorite = id => {
@@ -63,19 +70,30 @@ const ProductBox = ({ name, price, promo, stars, favorite, id, oldPrice = null, 
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button className={compare ? styles.compare : ''} variant='outline'>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.price}>
-          <Button className={styles.priceButton} noHover variant='small'>
-            $ {price}
-          </Button>
+        <div className='d-flex '>
+          {oldPrice != null && (
+            <div className={(styles.price, styles.crossed)}>
+              <Button noHover variant='small' className={styles['crossed-button']}>
+                $ {oldPrice}
+              </Button>
+            </div>
+          )}
+          <div className={styles.price}>
+            <Button noHover variant='small'>
+              $ {price}
+            </Button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+export default ProductBox;
 
 ProductBox.propTypes = {
   children: PropTypes.node,
@@ -83,8 +101,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  compare: PropTypes.bool,
+  oldPrice: PropTypes.number,
   favorite: PropTypes.bool,
   id: PropTypes.string,
 };
-
-export default ProductBox;
