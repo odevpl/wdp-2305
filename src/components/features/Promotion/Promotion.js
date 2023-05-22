@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import styles from './Promotion.module.scss';
 
+import { getPromotionById } from '../../../redux/promotionsRedux';
+
 const Promotion = ({ promotions }) => (
   <div className={styles.root}>
     <div className='container'>
@@ -10,7 +12,7 @@ const Promotion = ({ promotions }) => (
         <div className='col-md-6'>
           <div className={'card ' + styles.card + ' ' + styles.first_card}>
             <div className={'card-body ' + styles.photo}>
-              <img className={styles.photo} src={`/promotions/1.jpg`} alt='Promotion' />
+              <img className={styles.photo} src={getPromotionById[0]} alt='Promotion' />
             </div>
           </div>
         </div>
