@@ -31,7 +31,9 @@ $header-bg: $charcoalGray;
 
 $form-border-color: #292929;
 
-WDP230502-9
+$tablet-min-size: 768px;
+$tablet-max-size: 1024px;
+
 @keyframes animation {
     from {
         transform: scale(1);
@@ -67,4 +69,3 @@ $primary: $goldenBrown;
 $text-color: $darkGray;
 
 $form-border-color: $veryDarkGray;
-master

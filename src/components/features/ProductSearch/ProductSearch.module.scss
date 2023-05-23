@@ -53,8 +53,9 @@
 
     button {
       border: 0;
-      background-color: transparent;
+      background-color: red($color: #000000);
       outline: none;
     }
   }
 }
+
