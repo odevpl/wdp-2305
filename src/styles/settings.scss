@@ -31,6 +31,18 @@ $header-bg: $charcoalGray;
 
 $form-border-color: #292929;
 
+WDP230502-9
+@keyframes animation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+$button-animation-time: 250ms;
+$button-transition: background-color 250ms, color 250ms;
+
 // animations
 $fade-fill-mode: forwards;
 $fade-duration: 0.3s;
@@ -55,3 +67,4 @@ $primary: $goldenBrown;
 $text-color: $darkGray;
 
 $form-border-color: $veryDarkGray;
+master
