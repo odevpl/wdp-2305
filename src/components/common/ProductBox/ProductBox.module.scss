@@ -38,7 +38,7 @@
     }
 
     .buttons {
-      display: flex;
+      display: none;
       justify-content: space-between;
     }
   }
@@ -68,6 +68,8 @@
 
     }
   }
+
+
 
   .content {
     text-align: center;
@@ -127,3 +129,14 @@
     }
   }
 }
+
+.root:hover {
+  .buttons {
+    display: flex;
+  }   
+
+  .priceButton {
+    background: red;
+  }
+}
+
