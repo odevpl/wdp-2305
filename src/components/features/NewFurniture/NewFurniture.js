@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import SwipeableComponent from '../../common/Swipeable/SwipeableComponent';
 
 const NewFurniture = ({ categories = [], products = [] }) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
@@ -40,6 +41,21 @@ const NewFurniture = ({ categories = [], products = [] }) => {
     setActivePage(0);
   };
 
+  const handleSwipeLeft = () => {
+    const categoryProducts = products.filter(item => item.category === activeCategory);
+    const pagesCount = Math.ceil(categoryProducts.length / 8);
+
+    if (activePage < pagesCount - 1) {
+      setActivePage(prevActivePage => prevActivePage + 1);
+    }
+  };
+
+  const handleSwipeRight = () => {
+    if (activePage > 0) {
+      setActivePage(prevActivePage => prevActivePage - 1);
+    }
+  };
+
   const categoryProducts = products.filter(item => item.category === activeCategory);
   const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
 
@@ -51,50 +67,55 @@ const NewFurniture = ({ categories = [], products = [] }) => {
           onClick={() => handlePageChange(i)}
           className={i === activePage ? styles.active : ''}
         >
-          page {i}
+          Page {i}
         </a>
       </li>
     );
   }
 
   return (
-    <div className={styles.root}>
-      <div className='container'>
-        <div className={styles.panelBar}>
-          <div className='row no-gutters align-items-end'>
-            <div className={`col-auto ${styles.heading}`}>
-              <h3>New furniture</h3>
-            </div>
-            <div className={`col ${styles.menu}`}>
-              <ul>
-                {categories.map(item => (
-                  <li key={item.id}>
-                    <a
-                      className={item.id === activeCategory ? styles.active : ''}
-                      onClick={() => handleCategoryChange(item.id)}
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={`col-auto ${styles.dots}`}>
-              <ul>{dots}</ul>
+    <SwipeableComponent leftAction={handleSwipeRight} rightAction={handleSwipeLeft}>
+      <div className={styles.root}>
+        <div className='container'>
+          <div className={styles.panelBar}>
+            <div className='row no-gutters align-items-end'>
+              <div className={`col-auto ${styles.heading}`}>
+                <h3>New furniture</h3>
+              </div>
+              <div className={`col ${styles.menu}`}>
+                <ul>
+                  {categories.map(item => (
+                    <li key={item.id}>
+                      <a
+                        className={item.id === activeCategory ? styles.active : ''}
+                        onClick={() => handleCategoryChange(item.id)}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={`col-auto ${styles.dots}`}>
+                <ul>{dots}</ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={`${styles['products-view']} row`}>
-          {categoryProducts
-            .slice(activePage * (itemsPerRow * 2), (activePage + 1) * (itemsPerRow * 2))
-            .map(item => (
-              <div key={item.id} className={`col-${12 / itemsPerRow}`}>
-                <ProductBox {...item} />
-              </div>
-            ))}
+          <div className={`${styles['products-view']} row`}>
+            {categoryProducts
+              .slice(
+                activePage * (itemsPerRow * 2),
+                (activePage + 1) * (itemsPerRow * 2)
+              )
+              .map(item => (
+                <div key={item.id} className={`col-${12 / itemsPerRow}`}>
+                  <ProductBox {...item} />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
-    </div>
+    </SwipeableComponent>
   );
 };
 
