@@ -33,6 +33,7 @@
 
     .menu {
       text-align: center;
+      cursor: pointer;
       ul {
         margin: 0;
         padding: 0;
@@ -58,6 +59,8 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $primary;
+                transition: $button-transition;
+                animation: animation $button-animation-time forwards;
               }
             }
           }
@@ -92,10 +95,20 @@
             &.active,
             &:hover {
               background-color: $primary;
+              transition: $button-transition;
+              animation: animation $button-animation-time forwards;
             }
           }
         }
       }
     }
+  }
+  .products-view > * {
+    opacity: 0;
+    animation: $fade-in;
+  }
+
+  .products-view.fade-out > * {
+    animation: $fade-out;
   }
 }
