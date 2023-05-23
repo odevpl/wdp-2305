@@ -5,13 +5,14 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const MainLayout = ({ children }) => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState(0);
 
   const handleResize = () => {
     setViewportWidth(window.innerWidth);
   };
 
   useEffect(() => {
+    setViewportWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
 
     return () => {

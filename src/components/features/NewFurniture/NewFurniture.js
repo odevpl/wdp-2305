@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
-const NewFurniture = ({ categories, products }) => {
+const NewFurniture = ({ categories = [], products = [] }) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [itemsPerRow, setItemsPerRow] = useState(4);
   const [activePage, setActivePage] = useState(0);
@@ -84,18 +83,15 @@ const NewFurniture = ({ categories, products }) => {
               <ul>{dots}</ul>
             </div>
           </div>
-          <div className={`${styles['products-view']} row`}>
-            {categoryProducts
-              .slice(
-                activePage * (itemsPerRow * 2),
-                (activePage + 1) * (itemsPerRow * 2)
-              )
-              .map(item => (
-                <div key={item.id} className={`col-${12 / itemsPerRow}`}>
-                  <ProductBox {...item} />
-                </div>
-              ))}
-          </div>
+        </div>
+        <div className={`${styles['products-view']} row`}>
+          {categoryProducts
+            .slice(activePage * (itemsPerRow * 2), (activePage + 1) * (itemsPerRow * 2))
+            .map(item => (
+              <div key={item.id} className={`col-${12 / itemsPerRow}`}>
+                <ProductBox {...item} />
+              </div>
+            ))}
         </div>
       </div>
     </div>
@@ -103,29 +99,8 @@ const NewFurniture = ({ categories, products }) => {
 };
 
 NewFurniture.propTypes = {
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      category: PropTypes.string,
-      price: PropTypes.number,
-      stars: PropTypes.number,
-
-      promo: PropTypes.string,
-      newFurniture: PropTypes.bool,
-    })
-  ),
-};
-
-NewFurniture.defaultProps = {
-  categories: [],
-  products: [],
+  categories: PropTypes.array,
+  products: PropTypes.array,
 };
 
 export default NewFurniture;
