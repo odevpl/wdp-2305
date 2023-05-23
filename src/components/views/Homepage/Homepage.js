@@ -10,10 +10,12 @@ import BrandsList from '../../layout/BrandsList/BrandsList';
 import ProductsGallery from '../../features/ProductsGallery/ProductsGallery';
 
 import Banner from '../../common/Banner/Banner';
+import Promoted from '../../features/Promoted/Promoted';
 
 const Homepage = () => (
   <div className={styles.root}>
     <Banner />
+    <Promoted />
     <FeatureBoxes />
     <NewFurniture />
     <ProductsGallery />
