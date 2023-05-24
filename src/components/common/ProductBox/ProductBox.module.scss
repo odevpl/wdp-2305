@@ -38,8 +38,14 @@
     }
 
     .buttons {
-      display: none;
+      display: flex;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
       justify-content: space-between;
+      padding: 0px 5px;
+      z-index: -1;
     }
   }
   .crossed {
@@ -132,7 +138,7 @@
 
 .root:hover {
   .buttons {
-    display: flex;
+    z-index: 1;
   }   
 
   .priceButton {
