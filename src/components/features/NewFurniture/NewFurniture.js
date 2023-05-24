@@ -33,7 +33,10 @@ const NewFurniture = ({ categories = [], products = [] }) => {
   }, [viewportWidth]);
 
   const handlePageChange = newPage => {
-    setActivePage(newPage);
+    const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
+    if (newPage >= 0 && newPage < pagesCount) {
+      setActivePage(newPage);
+    }
   };
 
   const handleCategoryChange = newCategory => {
@@ -43,7 +46,7 @@ const NewFurniture = ({ categories = [], products = [] }) => {
 
   const handleSwipeLeft = () => {
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
 
     if (activePage < pagesCount - 1) {
       setActivePage(prevActivePage => prevActivePage + 1);
