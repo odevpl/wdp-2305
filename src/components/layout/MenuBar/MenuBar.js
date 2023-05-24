@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const MenuBar = ({ children }) => {
   const [isListOpen, setIsListOpen] = useState(false);
@@ -50,27 +50,13 @@ const MenuBar = ({ children }) => {
             {isListOpen && (
               <ul className={styles.list + ' flex-column flex-sm-row'}>
                 <li>
-                  <a href='#' className={styles.active}>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>Furniture</a>
-                </li>
-                <li>
-                  <a href='#'>Chair</a>
-                </li>
-                <li>
-                  <a href='#'>Table</a>
-                </li>
-                <li>
-                  <a href='#'>Sofa</a>
-                </li>
-                <li>
-                  <a href='#'>Bedroom</a>
-                </li>
-                <li>
-                  <a href='#'>Blog</a>
+                  <Link to='/'>Home</Link>
+                  <Link to='/shop/furniture'>Furniture</Link>
+                  <Link to='/shop/chair'>Chair</Link>
+                  <Link to='/shop/table'>Table</Link>
+                  <Link to='/shop/sofa'>Sofa</Link>
+                  <Link to='/shop/bedroom'>Bedroom</Link>
+                  <Link to='/blog'>Blog</Link>
                 </li>
               </ul>
             )}
