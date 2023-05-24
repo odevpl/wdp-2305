@@ -127,6 +127,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+
     },
     {
       id: 'aenean-ru-bristique-12',
