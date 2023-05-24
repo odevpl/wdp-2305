@@ -9,6 +9,7 @@ const NewFurniture = ({ categories = [], products = [] }) => {
   const [itemsPerRow, setItemsPerRow] = useState(4);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
+  const [fade, setFade] = useState(false);
 
   const handleResize = () => {
     setViewportWidth(window.innerWidth);
@@ -33,15 +34,16 @@ const NewFurniture = ({ categories = [], products = [] }) => {
   }, [viewportWidth]);
 
   const handlePageChange = newPage => {
-    const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
-    if (newPage >= 0 && newPage < pagesCount) {
-      setActivePage(newPage);
-    }
+    setFade(true);
+    setActivePage(newPage);
+    setFade(false);
   };
 
   const handleCategoryChange = newCategory => {
+    setFade(true);
     setActiveCategory(newCategory);
     setActivePage(0);
+    setFade(false);
   };
 
   const handleSwipeLeft = () => {
