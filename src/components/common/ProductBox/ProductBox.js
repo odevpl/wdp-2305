@@ -18,7 +18,6 @@ import ProductPopup from '../ProductPopop/ProductPopop';
 import { createPortal } from 'react-dom';
 import Stars from '../Stars/Stars';
 
-
 const ProductBox = ({
   name,
   price,
@@ -112,7 +111,7 @@ const ProductBox = ({
             </div>
           )}
           <div className={styles.price}>
-            <Button noHover variant='small'>
+            <Button className={styles.priceButton} noHover variant='small'>
               $ {price}
             </Button>
           </div>

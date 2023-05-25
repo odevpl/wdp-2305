@@ -56,7 +56,6 @@ export default function reducer(statePart = [], action = {}) {
             }
           : product
       );
-
     default:
       return statePart;
   }
