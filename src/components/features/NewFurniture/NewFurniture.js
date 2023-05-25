@@ -9,27 +9,65 @@ class NewFurniture extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      viewportWidth: window.innerWidth,
+      itemsPerRow: 4,
       activePage: 0,
       activeCategory: 'bed',
       fade: false,
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+    this.updateItemsPerRow();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    this.setState({ viewportWidth: window.innerWidth }, () => {
+      this.updateItemsPerRow();
+    });
+  };
+
+  updateItemsPerRow = () => {
+    const { viewportWidth } = this.state;
+    let itemsPerRow = 4;
+
+    if (viewportWidth >= 1230) {
+      itemsPerRow = 4;
+    } else if (viewportWidth >= 992) {
+      itemsPerRow = 3;
+    } else if (viewportWidth >= 767) {
+      itemsPerRow = 2;
+    } else if (viewportWidth <= 767) {
+      itemsPerRow = 2;
+    }
+
+    this.setState({ itemsPerRow });
+  };
+
   handlePageChange = newPage => {
-    this.setState({ fade: true });
-    this.setState({ activePage: newPage, fade: false });
+    this.setState({ fade: true, activePage: newPage }, () => {
+      this.setState({ fade: false });
+    });
   };
 
   handleCategoryChange = newCategory => {
-    this.setState({ fade: true });
-    this.setState({ activeCategory: newCategory, fade: false, activePage: 0 });
+    this.setState({ fade: true, activeCategory: newCategory, activePage: 0 }, () => {
+      this.setState({ fade: false });
+    });
   };
 
   handleSwipeLeft = () => {
     const { activePage, activeCategory } = this.state;
     const { products } = this.props;
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(
+      categoryProducts.length / (this.state.itemsPerRow * 2)
+    );
 
     if (activePage < pagesCount - 1) {
       this.setState(prevState => ({ activePage: prevState.activePage + 1 }));
@@ -45,10 +83,10 @@ class NewFurniture extends Component {
 
   render() {
     const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, itemsPerRow, viewportWidth, fade } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -58,7 +96,7 @@ class NewFurniture extends Component {
             onClick={() => this.handlePageChange(i)}
             className={i === activePage ? styles.active : ''}
           >
-            page {i}
+            Page {i}
           </a>
         </li>
       );
@@ -73,10 +111,10 @@ class NewFurniture extends Component {
           <div className='container'>
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
-                <div className={'col-12 col-md-4 ' + styles.heading}>
+                <div className={`col-auto ${styles.heading}`}>
                   <h3>New furniture</h3>
                 </div>
-                <div className={'col-12 col-md-8 ' + styles.menu}>
+                <div className={`col ${styles.menu}`}>
                   <ul>
                     {categories.map(item => (
                       <li key={item.id}>
@@ -90,20 +128,23 @@ class NewFurniture extends Component {
                     ))}
                   </ul>
                 </div>
-                <div className={'col-auto ' + styles.dots}>
+                <div className={`col-auto ${styles.dots}`}>
                   <ul>{dots}</ul>
                 </div>
               </div>
             </div>
             <div
-              className={`${this.state.fade ? styles['fade-out'] : ''} ${
+              className={`${fade ? styles['fade-out'] : ''} ${
                 styles['products-view']
               } row`}
             >
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(
+                  activePage * (itemsPerRow * 2),
+                  (activePage + 1) * (itemsPerRow * 2)
+                )
                 .map(item => (
-                  <div key={item.id} className='col-12 col-sm-4 col-lg-3'>
+                  <div key={item.id} className={`col-${12 / itemsPerRow}`}>
                     <ProductBox {...item} />
                   </div>
                 ))}
