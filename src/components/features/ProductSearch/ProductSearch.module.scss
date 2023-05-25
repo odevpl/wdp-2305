@@ -21,7 +21,7 @@
     .icon:last-child {
       position: absolute;
       right: 10px;
-      z-index: 0;@import "../../../styles/settings.scss";
+      z-index: 0;
 
       .root {
         border: 1px solid $form-border-color;
@@ -142,6 +142,7 @@
       position: relative;
       z-index: 1;
       font-size: 14px;
+      outline: none;
     }
 
     option {
