@@ -32,6 +32,7 @@ export const updateProductRate = payload => ({
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
+
     case ADD_TO_COMPARE:
       return statePart.map(product =>
         product.id === action.payload
