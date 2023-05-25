@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './CompareBox.module.scss';
-import Button from '../../common/Button/Button';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
@@ -17,13 +16,15 @@ const CompareBox = product => {
 
   return (
     <div className={styles.box}>
-      <img
-        alt={product.product.name}
-        src={process.env.PUBLIC_URL + `/images/products/${product.product.name}.jpg`}
-      />
-      <Button variant='outline' className={styles.closeButton} onClick={handleRemove}>
-        <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
-      </Button>
+      <div className={styles.image}>
+        <img
+          alt={product.product.name}
+          src={process.env.PUBLIC_URL + `/images/products/${product.product.name}.jpg`}
+        />
+        <button className={styles.closeButton} onClick={handleRemove}>
+          <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
+        </button>
+      </div>
     </div>
   );
 };
