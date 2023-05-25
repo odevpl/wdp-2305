@@ -138,6 +138,8 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   id: PropTypes.string,
   variant: PropTypes.string,
+  userStars: PropTypes.number,
+
 };
 
 export default ProductBox;
