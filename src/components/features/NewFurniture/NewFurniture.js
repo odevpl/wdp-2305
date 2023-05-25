@@ -11,7 +11,7 @@ class NewFurniture extends Component {
     this.state = {
       activePage: 0,
       activeCategory: 'bed',
-    fade: false,
+      fade: false,
     };
   }
 
@@ -96,10 +96,10 @@ class NewFurniture extends Component {
               </div>
             </div>
             <div
-            className={`${this.state.fade ? styles['fade-out'] : ''} ${
-              styles['products-view']
-            } row`}
-          >
+              className={`${this.state.fade ? styles['fade-out'] : ''} ${
+                styles['products-view']
+              } row`}
+            >
               {categoryProducts
                 .slice(activePage * 8, (activePage + 1) * 8)
                 .map(item => (

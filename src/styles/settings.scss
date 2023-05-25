@@ -3,6 +3,7 @@ $base-padding: 24px;
 /* COLORS FOR CUSTOMIZATION BY THE CLIENT */
 $royalBlue: #4169e1;
 $oliveGreen: #556b2f;
+$lightGreen: #87ad46;
 $plum: #dda0dd;
 $teal: #008080;
 $coral: #ff7f50;
@@ -24,6 +25,8 @@ $darkCharcoalGray: #434343;
 $charcoalGray: #363636;
 $darkGray: #2a2a2a;
 $veryDarkGray: #292929;
+$text-light: #e1e1e1;
+$veryLightGrey: rgba(237, 231, 225,0.9);
 
 
 $header-topbar-bg: $darkCharcoalGray;
@@ -33,6 +36,8 @@ $form-border-color: #292929;
 
 $tablet-min-size: 768px;
 $tablet-max-size: 1024px;
+
+// animations
 
 @keyframes animation {
     from {
@@ -45,7 +50,6 @@ $tablet-max-size: 1024px;
 $button-animation-time: 250ms;
 $button-transition: background-color 250ms, color 250ms;
 
-// animations
 $fade-fill-mode: forwards;
 $fade-duration: 0.3s;
 
