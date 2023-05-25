@@ -15,7 +15,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: true,
+      favorite: true,
       compare: true,
     },
     {
@@ -26,7 +26,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: true,
+      favorite: false,
       compare: false,
     },
     {
@@ -37,7 +37,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: true,
     },
     {
@@ -48,7 +48,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -59,7 +59,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -70,7 +70,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -81,7 +81,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -92,7 +92,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -103,7 +103,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -114,7 +114,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -125,7 +125,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -136,7 +136,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -147,7 +147,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -158,7 +158,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -169,7 +169,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -180,7 +180,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -191,7 +191,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -202,7 +202,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -213,7 +213,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -224,7 +224,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -235,7 +235,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -246,7 +246,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -257,7 +257,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {
@@ -268,7 +268,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      favorite: false,
       compare: false,
     },
     {

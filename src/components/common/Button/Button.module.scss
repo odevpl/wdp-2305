@@ -43,3 +43,8 @@
     animation: animation $button-animation-time forwards;
   }
 }
+
+.favorite {
+  color: $primary;
+  border: 1px solid $primary;
+}
