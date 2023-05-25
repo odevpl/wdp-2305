@@ -1,0 +1,134 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  text-align: left;
+  z-index: 1;
+  margin-bottom: 3em;
+
+  .chatBot {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .chatWindow {
+      width: 300px;
+      margin: 2px;
+
+
+      .chatHeadline {
+        height: 40px;
+        background-color: $primary;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: $chat-textarea-bakground;
+
+        .icon {
+          padding: 0px;
+          opacity: 0.5;
+          width: 35px;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .chatBody {
+        height: 400px;
+        background-color: #ffffff;
+        width: 100%;
+        margin: 0;
+        border: 1px solid $primary;
+
+        .message {
+          border: 1px solid;
+          border-radius: 0px 10px 10px 10px;
+          -webkit-box-shadow: 2px 7px 19px 0px rgba(66, 68, 90, 1);
+          -moz-box-shadow: 2px 7px 19px 0px rgba(66, 68, 90, 1);
+          box-shadow: 2px 7px 19px 0px rgba(66, 68, 90, 1);
+        }
+
+        .topic {
+          text-align: center;
+          border-radius: 20px;
+          border: 3px solid $primary
+        }
+      }
+
+      .chatMessageArea {
+        background-color: $veryLightGray;
+
+        textarea {
+          resize: none;
+          font-size: 10px;
+          background: none;
+          border: none;
+          color: $white;
+        }
+      }
+
+      .chatFooter {
+        background-color: $primary;
+        text-align: center;
+        padding: 3px;
+        font-size: 20px;
+
+        .footerIcon {
+          color: white;
+          padding: -3px;
+        }
+      }
+
+    }
+
+    .arrow {
+      padding: 4px;
+      bottom: 10px;
+    }
+
+    .chatButton {
+      width: 150px;
+      margin: 15px 2px;
+
+      .button {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        justify-content: center;
+
+
+        &:hover {
+          background-color: $primary;
+        }
+
+      }
+
+      .button.active {
+        background-color: $primary;
+      }
+    }
+
+  }
+}
+
+.chatFooter:after {
+  bottom: 11%;
+    left: 77%;
+    content: "";
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: $primary;
+    border-right: 0px solid transparent;
+    border-top: 35px solid $primary;
+    border-left: 55px solid transparent;
+
+}
