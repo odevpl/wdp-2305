@@ -18,6 +18,7 @@ import ProductPopup from '../ProductPopop/ProductPopop';
 import { createPortal } from 'react-dom';
 import Stars from '../Stars/Stars';
 
+
 const ProductBox = ({
   name,
   price,
