@@ -37,7 +37,7 @@
       position: relative;
       border: 1px solid $text-light;
       margin: 0 3px;
-      background-color: $veryLightGrey;
+      background-color: $veryLightGray;
       &::after{
         content: '';
         position: absolute;
@@ -87,7 +87,7 @@
   hr {
     margin-bottom: 20px;
     width: 100%;
-    border-top: 2px solid $veryLightGrey;
+    border-top: 2px solid $veryLightGray;
     position: relative;
 
     &::before {
@@ -130,7 +130,7 @@
 
       &:hover,
       &.active {
-        background-color:$veryLightGrey;
+        background-color:$veryLightGray;
         color: $primary;
         border-color: $primary;
         transition: $button-transition;
@@ -145,7 +145,7 @@
   .side-photo {
     height: 600px;
     position: relative;
-    background-color: $veryLightGrey;
+    background-color: $veryLightGray;
     object-fit: contain;
 
     .text-wrapper {
