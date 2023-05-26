@@ -42,7 +42,7 @@ class NewFurniture extends Component {
       itemsPerRow = 3;
     } else if (viewportWidth >= 767) {
       itemsPerRow = 2;
-    } else if (viewportWidth <= 767) {
+    } else if (viewportWidth < 767) {
       itemsPerRow = 2;
     }
 
