@@ -73,10 +73,10 @@ class NewFurniture extends Component {
           <div className='container'>
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
-                <div className={'col-12 col-md-6 ' + styles.heading}>
+                <div className={'col-12 col-md-4 ' + styles.heading}>
                   <h3>New furniture</h3>
                 </div>
-                <div className={'col-12 col-md-6 ' + styles.menu}>
+                <div className={'col-12 col-md-8 ' + styles.menu}>
                   <ul>
                     {categories.map(item => (
                       <li key={item.id}>
