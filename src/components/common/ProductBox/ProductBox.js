@@ -34,11 +34,13 @@ const ProductBox = ({
       <div className={styles.photo}>
         {promo && <div className={styles.sale}>{promo}</div>}
         <Link to={id}>
-          <img
-            className={styles.image}
-            alt={name}
-            src={process.env.PUBLIC_URL + `/images/products/${name}.jpg`}
-          />
+          <Link to={id}>
+            <img
+              className={styles.image}
+              alt={name}
+              src={process.env.PUBLIC_URL + `/images/products/${name}.jpg`}
+            />
+          </Link>
         </Link>
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -49,7 +51,9 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <Link to={id}>
-          <h5>{name}</h5>
+          <Link to={id}>
+            <h5>{name}</h5>
+          </Link>
         </Link>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
