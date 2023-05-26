@@ -11,6 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import { favoriteProduct } from '../../../redux/productsRedux';
 import {
   getProductsToCompare,
   addProductToCompare,
@@ -22,11 +23,16 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  favorite,
   oldPrice = null,
-  isFavorite,
   compare,
 }) => {
   const dispatch = useDispatch();
+
+  const handleClickFavorite = id => {
+    dispatch(favoriteProduct(id));
+  };
+
   const compareProducts = useSelector(state => getProductsToCompare(state));
   const handleCompare = e => {
     e.preventDefault();
@@ -34,6 +40,7 @@ const ProductBox = ({
       dispatch(addProductToCompare(id));
     }
   };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -67,7 +74,14 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button
+            favorite={favorite}
+            variant='outline'
+            onClick={e => {
+              e.preventDefault();
+              handleClickFavorite(id);
+            }}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -78,6 +92,7 @@ const ProductBox = ({
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
+
         <div className='d-flex '>
           {oldPrice != null && (
             <div className={(styles.price, styles.crossed)}>
@@ -87,7 +102,7 @@ const ProductBox = ({
             </div>
           )}
           <div className={styles.price}>
-            <Button noHover variant='small'>
+            <Button noHover className={styles.priceButton} variant='small'>
               $ {price}
             </Button>
           </div>
@@ -104,9 +119,10 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  isFavorite: PropTypes.bool,
   compare: PropTypes.bool,
   oldPrice: PropTypes.number,
+  favorite: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 export default ProductBox;

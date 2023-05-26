@@ -17,10 +17,12 @@ const createActionName = name => `app/${reducerName}/${name}`;
 // action types
 
 const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
+const FAVORITE_PRODUCT = createActionName('FAVORITE_PRODUCT');
 
 // action creators
 
 export const addProductToCompare = payload => ({ type: ADD_TO_COMPARE, payload });
+export const favoriteProduct = payload => ({ type: FAVORITE_PRODUCT, payload });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -32,6 +34,12 @@ export default function reducer(statePart = [], action = {}) {
           : product
       );
 
+    case FAVORITE_PRODUCT:
+      return statePart.map(product =>
+        product.id === action.payload
+          ? { ...product, favorite: !product.favorite }
+          : product
+      );
     default:
       return statePart;
   }
