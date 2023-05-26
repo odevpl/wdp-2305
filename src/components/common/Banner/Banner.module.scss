@@ -1,0 +1,47 @@
+@import "../../../styles/settings.scss";
+
+.root {
+
+  .banner {
+    background-color: $banner-background;
+    padding: 50px 0;
+    color: white;
+  }
+
+  p {
+    text-align: center;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 60px;
+    line-height: 75px;
+  }
+
+  .subtitle {
+    padding-left: 8px;
+    line-height: 30px;
+    font-size: 30px;
+    letter-spacing: 11px;
+    word-spacing: 12px;
+
+     span {
+      color: $banner-orange-text;
+      letter-spacing: 0;
+     }
+  }
+
+  .menu {
+    background-color: $banner-menu-background;
+    padding: 10px;
+
+      span {
+        color: $banner-orange-text;
+      }
+
+      p {
+        text-align: start;
+        word-spacing: 10px;
+      }
+  }
+}

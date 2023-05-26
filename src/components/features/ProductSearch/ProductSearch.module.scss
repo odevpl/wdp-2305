@@ -1,5 +1,4 @@
 @import "../../../styles/settings.scss";
-
 .root {
   border: 1px solid $form-border-color;
   display: inline-flex;
@@ -24,14 +23,42 @@
       right: 10px;
       z-index: 0;
     }
+    .selectCategoryList {
+      list-style: none;
+      margin: 0;
+      padding: 0 10px;
+      color: $text-color;
+      font-size: 14px;
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
+      li {
+        border-bottom: 0;
+      }
+
+      &:hover {
+        .categoriesList {
+          display: block;
+        }
+      }
+
+      .categoriesList {
+        display: none;
+        list-style: none;
+        position: absolute;
+        padding: 11px 0 0 0;
+        z-index: 3;
+        color: $text-color;
+        font-size: 14px;
+
+        li {
+          background-color: rgb(255, 255, 255);
+          padding: 8px 25px;
+          border: 1px solid black;
+
+          &:hover {
+            background-color: $primary;
+          }
+        }
+      }
     }
   }
 
@@ -53,9 +80,69 @@
 
     button {
       border: 0;
-      background-color: red($color: #000000);
+      background-color: transparent;
       outline: none;
+      &:hover {
+        color: $primary;
+      }
     }
   }
 }
 
+.selectCategoryList {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  color: $text-color;
+  font-size: 14px;
+
+  li {
+    border-bottom: 0;
+  }
+
+  &:hover {
+    .categoriesList {
+      display: block;
+    }
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  border: 0;
+  background-color: transparent;
+  padding: 5px 30px 5px 35px;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  outline: none;
+}
+
+option {
+  font-size: 14px;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  position: relative;
+  input {
+    border: 0;
+    padding-left: 10px;
+    font-size: 14px;
+    outline: none;
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+
+    :hover {
+      color: $primary;
+    }
+  }
+}
