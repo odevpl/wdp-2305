@@ -21,9 +21,9 @@ const CompareBox = product => {
         alt={product.product.name}
         src={process.env.PUBLIC_URL + `/images/products/${product.product.name}.jpg`}
       />
-      <Button variant='outline' className={styles.closeButton} onClick={handleRemove}>
+      <button className={styles.closeButton} onClick={handleRemove}>
         <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
-      </Button>
+      </button>
     </div>
   );
 };

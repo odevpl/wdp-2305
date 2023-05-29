@@ -70,7 +70,7 @@ const Promoted = () => {
                 <h1>
                   {deal.title1}
                   <span>{deal.title2}</span>
-                  <h2>{deal.subtitle}</h2>
+                  <p>{deal.subtitle}</p>
                 </h1>
                 <button>Shop Now</button>
               </div>

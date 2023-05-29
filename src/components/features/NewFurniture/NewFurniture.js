@@ -151,6 +151,9 @@ class NewFurniture extends Component {
                   </div>
                 ))}
             </div>
+            {productsToCompare.length > 0 && (
+              <CompareContainer productsToCompare={productsToCompare} />
+            )}
           </div>
         </div>
       </SwipeableComponent>
