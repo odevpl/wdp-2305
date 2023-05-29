@@ -5,6 +5,7 @@ import styles from './MenuBar.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const MenuBar = ({ children }) => {
   const [isListOpen, setIsListOpen] = useState(false);
@@ -50,27 +51,25 @@ const MenuBar = ({ children }) => {
             {isListOpen && (
               <ul className={styles.list + ' flex-column flex-sm-row'}>
                 <li>
-                  <a href='#' className={styles.active}>
-                    Home
-                  </a>
+                  <Link to='/'>Home</Link>
                 </li>
                 <li>
-                  <a href='#'>Furniture</a>
+                  <Link to='/shop/furniture'>Furniture</Link>
                 </li>
                 <li>
-                  <a href='#'>Chair</a>
+                  <Link to='/shop/chair'>Chair</Link>
                 </li>
                 <li>
-                  <a href='#'>Table</a>
+                  <Link to='/shop/table'>Table</Link>
                 </li>
                 <li>
-                  <a href='#'>Sofa</a>
+                  <Link to='/shop/sofa'>Sofa</Link>
                 </li>
                 <li>
-                  <a href='#'>Bedroom</a>
+                  <Link to='/shop/bedroom'>Bedroom</Link>
                 </li>
                 <li>
-                  <a href='#'>Blog</a>
+                  <Link to='/blog'>Blog</Link>
                 </li>
               </ul>
             )}

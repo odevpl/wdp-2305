@@ -111,4 +111,29 @@
   .products-view.fade-out > * {
     animation: $fade-out;
   }
+  @media (max-width: 720px) {
+    .heading {
+      margin-bottom: 20px;
+    }
+    .menu {
+      display: flex;
+      justify-content: flex-start;
+      a {
+        z-index: 2;
+      }
+    }
+    .panelBar {
+
+      .dots {
+        top: 33px ;
+
+        ul>li>a {
+          width: 17px ;
+          height: 17px ;
+          border-radius: 10px ;
+          margin: 0 3px;
+       }
+      }
+    }
+  }
 }
