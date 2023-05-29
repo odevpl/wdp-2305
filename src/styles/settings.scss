@@ -1,13 +1,79 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+/* COLORS FOR CUSTOMIZATION BY THE CLIENT */
+$royalBlue: #4169e1;
+$oliveGreen: #556b2f;
+$lightGreen: #87ad46;
+$plum: #dda0dd;
+$teal: #008080;
+$coral: #ff7f50;
+$extremelyDarkGray: #080808;
+$lightGoldenBrown: #e5b982;
+$lightCharcoalGray: #545454;
+$lightCharcoalGray: #444444;
+$lightGray: #555555;
+$lightGray: #4c4c4c;
+$darkGoldenBrown: #a67329;
+$veryDarkGray: #111111;
+$veryDarkGoldenBrown: #754b1e;
+$veryDarkCharcoalGray: #1e1e1e;
+$veryDarkCharcoalGray: #141414;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+/* COLORS USED IN THE PROJECT */
+$goldenBrown: #d58e32;
+$darkCharcoalGray: #434343;
+$charcoalGray: #363636;
+$darkGray: #2a2a2a;
+$veryDarkGray: #292929;
+$text-light: #e1e1e1;
+$veryLightGray: #a7a1a1ee;
 
-$primary: #d58e32;
 
-$text-color: #2a2a2a;
+$header-topbar-bg: $darkCharcoalGray;
+$header-bg: $charcoalGray;
 
 $form-border-color: #292929;
+
+$tablet-min-size: 768px;
+$tablet-max-size: 1024px;
+
+// animations
+
+@keyframes animation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+$button-animation-time: 250ms;
+$button-transition: background-color 250ms, color 250ms;
+
+$fade-fill-mode: forwards;
+$fade-duration: 0.3s;
+
+@keyframes fade-out{
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+@keyframes fade-in{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+$fade-in: fade-in $fade-duration $fade-fill-mode;
+$fade-out: fade-out $fade-duration $fade-fill-mode;
+
+$footer-claim-bg: $darkGray;
+$footer-bg: $charcoalGray;
+
+$banner-background: $darkCharcoalGray;
+$banner-orange-text: $goldenBrown;
+$banner-menu-background: $veryLightGray;
+
+$primary: $goldenBrown;
+
+$text-color: $darkGray;
+
+$form-border-color: $veryDarkGray;

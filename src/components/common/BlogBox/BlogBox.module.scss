@@ -1,0 +1,73 @@
+@import "../../../styles/settings.scss";
+
+.topOfContainer {
+  position: relative;
+  padding: 80% 10px 0 10px;
+  background-color: $lightGray;
+
+  .dateBox {
+    display: flex;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    justify-content: space-between;
+
+    .date, .comments {
+      display: flex;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      p{
+        padding: 0 5px;
+        margin:0;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.bottomOfContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  .description {
+    width: 80%;
+    height: 80%;
+    top: 0;
+    left: 10%;
+    background-color: white;
+    overflow: hidden;
+    h6 {
+      margin: 15px 0;
+      color: $primary;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+
+  .button {
+    display: flex;
+    background-color: $darkGray;
+    color: white;
+    margin: 15px 15px;
+    width: 40%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}

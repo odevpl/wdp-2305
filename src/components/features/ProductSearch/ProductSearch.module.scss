@@ -1,22 +1,86 @@
 @import "../../../styles/settings.scss";
-
 .root {
   border: 1px solid $form-border-color;
   display: inline-flex;
   height: 45px;
   color: $text-color;
 
+  .category>.dropdown>.dropdown-btn {
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: $text-color;
+    position: relative;
+    border:none;
+    outline: none;
+    box-shadow: none !important;
+    z-index: 1;
+    max-width: 195px;
+    overflow: hidden;
+  }
+
+  .category .submenu-dropdown>.submenu {
+    display: none;
+    top:0 !important;
+    left:100% !important;
+    transform: none !important;
+  }
+
+  .category .submenu-dropdown:hover {
+    .submenu{
+      display: block;
+      position: relative;
+
+    li {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      .categoriesList {
+        display: block;
+      }
+    }
+
+    .categoriesList {
+      display: none;
+      list-style: none;
+      position: absolute;
+      padding: 11px 0 0 0;
+      z-index: 3;
+      color: $text-color;
+      font-size: 14px;
+
+      li {
+        background-color: rgb(255, 255, 255);
+        padding: 8px 25px;
+        border: 1px solid black;
+      }
+      }
+
+    }
+  }
+
+  .category .submenu-dropdown {
+    position: relative;
+  }
+
+  .category>.dropdown {
+    margin:0 auto;
+  }
+
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
     align-items: center;
     position: relative;
+    min-width: 205px;
 
     .icon:first-child {
       color: $primary;
-      position: absolute;
+      position: relative;
       left: 10px;
       z-index: 0;
+      margin-right: 5px;
     }
 
     .icon:last-child {
@@ -24,15 +88,19 @@
       right: 10px;
       z-index: 0;
     }
+    .selectCategoryList {
+      list-style: none;
+      margin: 0;
+      padding: 0 10px;
+      color: $text-color;
+      font-size: 14px;
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
+    .submenu-select .icon{
       position: relative;
-      z-index: 1;
+      margin-left: 7px;
+      color: $text-color;
     }
+
   }
 
   .searchField {
@@ -50,11 +118,28 @@
         color: $text-color;
       }
     }
+  }
+}
 
-    button {
-      border: 0;
-      background-color: transparent;
-      outline: none;
+.searchField {
+  display: flex;
+  align-items: center;
+  position: relative;
+  input {
+    border: 0;
+    padding-left: 10px;
+    font-size: 14px;
+    outline: none;
+    &::placeholder {
+      color: $text-color;
     }
+  }
+}
+
+  button {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    color: $text-color;
   }
 }

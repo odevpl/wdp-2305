@@ -19,6 +19,8 @@
         &:hover {
           color: $primary;
           text-decoration: none;
+          transition: $button-transition;
+          animation: animation $button-animation-time forwards;
         }
       }
     }
@@ -37,6 +39,17 @@
 
     .icon {
       margin-right: 5px;
+    }
+  }
+
+  .text {
+    display: inline-block;
+  }
+
+  
+  @media (max-width: 767px) {
+    .text {
+      display: none;
     }
   }
 }

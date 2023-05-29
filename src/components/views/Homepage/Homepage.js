@@ -6,12 +6,23 @@ import styles from './Homepage.module.scss';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Promotion from '../../features/Promotion/Promotion';
+import BlogFeature from '../../features/BlogFeature/BlogFeature';
+import BrandsList from '../../layout/BrandsList/BrandsList';
+import ProductsGallery from '../../features/ProductsGallery/ProductsGallery';
+import Banner from '../../common/Banner/Banner';
+import Promoted from '../../features/Promoted/Promoted';
+
 
 const Homepage = () => (
   <div className={styles.root}>
+    <Banner />
+    <Promoted />
     <FeatureBoxes />
     <Promotion />
     <NewFurniture />
+    <ProductsGallery />
+    <BlogFeature />
+    <BrandsList />
   </div>
 );
 

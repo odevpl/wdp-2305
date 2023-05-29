@@ -4,6 +4,7 @@
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
   background-color: #ffffff;
 
+  
   :global(.container) > :global(.row) {
     height: 84px;
   }
@@ -41,6 +42,8 @@
         background-color: $primary;
         color: #ffffff;
         border-color: $primary;
+        transition: $button-transition;
+        animation: animation $button-animation-time forwards;
       }
 
       &.active {
@@ -49,3 +52,9 @@
     }
   }
 }
+
+.one {
+  height: 500px;
+}
+
+

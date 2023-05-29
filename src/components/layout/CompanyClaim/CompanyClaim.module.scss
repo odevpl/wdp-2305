@@ -25,6 +25,18 @@
     }
   }
 
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
   .cart {
     .cartBox {
       display: inline-block;
@@ -33,7 +45,7 @@
 
       .cartIcon {
         background-color: $primary;
-        width: 55px;
+        width: 66px;
         height: 50px;
         border-radius: 3px;
         display: flex;
@@ -42,12 +54,11 @@
         font-size: 20px;
 
         .icon {
-          margin-right: 5px;
+          margin-right: 18px;
         }
       }
 
       .cartCounter {
-        width: 28px;
         height: 27px;
         border-radius: 14px;
         background-color: $header-bg;
@@ -58,15 +69,49 @@
         color: rgb(224, 227, 237);
         position: absolute;
         top: 50%;
-        right: 0;
+        right: -3px;
         transform: translate(50%, -50%);
+        padding: 0 8px;
+        z-index: 1;
+        width: auto; 
+        min-width: 28px;
+
+        .counterText {
+          white-space: nowrap;
+        }
       }
 
       &:hover {
         .cartIcon {
           background-color: lighten($primary, 10%);
+          transition: $button-transition;
+          animation: animation $button-animation-time forwards;
         }
       }
+    }
+  }
+
+
+  @media (max-width: 767px) {
+    .logo {
+      order: -1;
+    }
+
+    .phoneNumber,
+    .cart {
+      flex-basis: 50%;
+    }
+
+    .cart {
+      order: 1;
+    }
+
+    .phoneNumber {
+      order: 2;
+    }
+
+    .row {
+      display: flex;
     }
   }
 }
