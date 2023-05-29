@@ -26,7 +26,12 @@ const ProductBox = ({
   id,
   oldPrice = null,
   compare,
+  variant,
 }) => {
+  const classes = [];
+  if (variant) classes.push(styles[variant]);
+  else classes.push('buttons');
+
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getProductsToCompare(state));
   const handleCompare = e => {
@@ -49,7 +54,7 @@ const ProductBox = ({
             src={process.env.PUBLIC_URL + `/images/products/${name}.jpg`}
           />
         </Link>
-        <div className={styles.buttons}>
+        <div className={styles[classes]}>
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -113,12 +118,16 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
-  id: PropTypes.string,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  compare: PropTypes.bool,
+  oldPrice: PropTypes.number,
+  favorite: PropTypes.bool,
+  id: PropTypes.string,
+  variant: PropTypes.string,
 };
 
 export default ProductBox;

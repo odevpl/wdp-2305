@@ -1,10 +1,8 @@
 import React from 'react';
-
 import ProductBox from '../../common/ProductBox/ProductBox';
 import styles from './Promoted.module.scss';
 import { useSelector } from 'react-redux';
 import Button from '../../common/Button/Button';
-
 import { getAllPromoted, getDeals } from '../../../redux/promotedRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +15,7 @@ const Promoted = () => {
   for (let i = 0; i < promoted.length; i++) {
     dots.push(
       <li key={i}>
-        <a className={i === activeDeal && styles.active}>page {i}</a>
+        <a className={i === activeDeal ? styles.active : undefined}>page {i}</a>
       </li>
     );
   }
@@ -54,7 +52,7 @@ const Promoted = () => {
           <div className={styles.product}>
             {promoted.slice(activeDeal, activeDeal + 1).map(product => (
               <div key={product.id}>
-                <ProductBox {...product} />
+                <ProductBox variant='noButtons' {...product} />
               </div>
             ))}
           </div>
