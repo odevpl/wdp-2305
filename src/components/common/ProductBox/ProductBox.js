@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -10,9 +12,11 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { useDispatch } from 'react-redux';
 import { favoriteProduct } from '../../../redux/productsRedux';
-
+import {
+  getProductsToCompare,
+  addProductToCompare,
+} from '../../../redux/productsRedux';
 const ProductBox = ({
   name,
   price,
@@ -22,13 +26,23 @@ const ProductBox = ({
   id,
   oldPrice = null,
   compare,
+  variant,
 }) => {
-  const dispatch = useDispatch();
+  const classes = [];
+  if (variant) classes.push(styles[variant]);
+  else classes.push('buttons');
 
+  const dispatch = useDispatch();
+  const compareProducts = useSelector(state => getProductsToCompare(state));
+  const handleCompare = e => {
+    e.preventDefault();
+    if (compareProducts.length < 4 || compare === true) {
+      dispatch(addProductToCompare(id));
+    }
+  };
   const handleClickFavorite = id => {
     dispatch(favoriteProduct(id));
   };
-
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -40,7 +54,7 @@ const ProductBox = ({
             src={process.env.PUBLIC_URL + `/images/products/${name}.jpg`}
           />
         </Link>
-        <div className={styles.buttons}>
+        <div className={styles[classes]}>
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -76,7 +90,11 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button className={compare ? styles.compare : ''} variant='outline'>
+          <Button
+            variant='outline'
+            className={clsx(compare && styles.compare)}
+            onClick={handleCompare}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -89,7 +107,7 @@ const ProductBox = ({
             </div>
           )}
           <div className={styles.price}>
-            <Button className={styles.priceButton} noHover variant='small'>
+            <Button noHover variant='small'>
               $ {price}
             </Button>
           </div>
@@ -109,6 +127,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   favorite: PropTypes.bool,
   id: PropTypes.string,
+  variant: PropTypes.string,
 };
 
 export default ProductBox;
