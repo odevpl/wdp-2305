@@ -26,7 +26,7 @@ const Promotion = () => {
             </div>
           </div>
           <div className='col-md-6'>
-            <div className='row'>
+            <div className={'row ' + styles.cardRow}>
               <div className={'card ' + styles.card}>
                 <div className={'card-body ' + styles.photo}>
                   <img
@@ -37,7 +37,7 @@ const Promotion = () => {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className={'row ' + styles.cardRow}>
               <div className={'card ' + styles.card}>
                 <div className={'card-body ' + styles.photo}>
                   <img

@@ -346,7 +346,7 @@ const initialState = {
   cart: {
     products: [],
   },
-WDP230502-25
+
   promotions: [
     { id: '1', source: '/promotions/1.jpg' },
     { id: '2', source: '/promotions/2.jpg' },
@@ -361,7 +361,6 @@ WDP230502-25
       subtitle: 'Save up to 50% of all furniture',
       image: 'deal1',
     },
-
   ],
 };
 

@@ -12,6 +12,8 @@
   }
   .first_card{
     height: 20em;
+    margin-left: 0;
+    margin-right: 2rem;
   }
   .photo {
     margin: 0;
@@ -19,5 +21,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .cardRow {
+    margin-left: 2rem;
   }
 }
