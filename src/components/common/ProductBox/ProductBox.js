@@ -18,6 +18,7 @@ import {
   addProductToCompare,
 } from '../../../redux/productsRedux';
 import ProductPopup from '../ProductPopop/ProductPopop';
+import { createPortal } from 'react-dom';
 
 const ProductBox = ({
   name,
@@ -129,7 +130,11 @@ const ProductBox = ({
           </div>
         </div>
       </div>
-      {showPopup && <ProductPopup name={name} price={price} closePopup={closePopup} />}
+      {showPopup &&
+        createPortal(
+          <ProductPopup name={name} price={price} closePopup={closePopup} />,
+          document.body
+        )}
     </div>
   );
 };
