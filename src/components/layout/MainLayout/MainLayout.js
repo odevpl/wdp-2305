@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import ChatBot from '../../common/ChatBot/ChatBot';
+
 import Feedback from '../Feedback/Feedback';
 
 const MainLayout = ({ children }) => (
@@ -10,6 +12,7 @@ const MainLayout = ({ children }) => (
     <Header />
     {children}
     <Feedback />
+    <ChatBot />
     <Footer />
   </div>
 );
