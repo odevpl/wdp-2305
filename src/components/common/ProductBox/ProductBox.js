@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import clsx from 'clsx';
@@ -17,6 +17,8 @@ import {
   getProductsToCompare,
   addProductToCompare,
 } from '../../../redux/productsRedux';
+import ProductPopup from '../ProductPopop/ProductPopop';
+
 const ProductBox = ({
   name,
   price,
@@ -34,15 +36,27 @@ const ProductBox = ({
 
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getProductsToCompare(state));
+  const [showPopup, setShowPopup] = useState(false);
+
   const handleCompare = e => {
     e.preventDefault();
     if (compareProducts.length < 4 || compare === true) {
       dispatch(addProductToCompare(id));
     }
   };
+
   const handleClickFavorite = id => {
     dispatch(favoriteProduct(id));
   };
+
+  const handleQuickView = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -55,7 +69,9 @@ const ProductBox = ({
           />
         </Link>
         <div className={styles[classes]}>
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={handleQuickView}>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -113,6 +129,7 @@ const ProductBox = ({
           </div>
         </div>
       </div>
+      {showPopup && <ProductPopup name={name} price={price} closePopup={closePopup} />}
     </div>
   );
 };
