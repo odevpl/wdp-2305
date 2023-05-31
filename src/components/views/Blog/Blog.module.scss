@@ -27,8 +27,8 @@
 .iconsContainer{
   text-align:center;
   padding: 10px;
-  border-top: solid $darkCharcoalGray 1px;
-  border-bottom: solid $darkCharcoalGray 1px;
+  border-top: solid $veryLightGray 1px;
+  border-bottom: solid $veryLightGray 1px;
 
 
   .icons {
@@ -40,7 +40,8 @@
 }
 
 .inputContainer input {
-  border: 0;
+  border: 3px solid $veryLightGray;
+  border-radius: 5px;
 }
 
 .recentPostsTitle {
@@ -57,7 +58,7 @@
   li {
     margin-bottom: 10px;
     cursor: pointer;
-    border-bottom: solid $darkCharcoalGray 1px;
+    border-bottom: solid $veryLightGray 1px;
     &:hover{
       color: $goldenBrown;
     }
