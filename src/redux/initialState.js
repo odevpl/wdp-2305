@@ -362,6 +362,16 @@ const initialState = {
       image: 'deal1',
     },
   ],
+
+  blog: [
+    {
+      id: 1,
+      title: 'Witamy na nowej stronie sklepu!',
+      image: '/images/blog/blog_1.jpg',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate dignissim porta. Phasellus eget augue at magna fringilla feugiat. Duis suscipit tellus at velit egestas pulvinar. Pellentesque scelerisque ligula ac diam mattis, egestas imperdiet ante mattis. Quisque tortor sapien, suscipit non augue elementum, consectetur pulvinar ex.',
+    },
+  ],
 };
 
 export default initialState;
