@@ -3,3 +3,65 @@
 .root {
   padding: $base-padding 0;
 }
+
+.blogBox img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.blogBox p {
+  margin-top: 25px;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    padding-right: 15px;
+  }
+}
+
+.iconsContainer{
+  text-align:center;
+  padding: 10px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+
+
+  .icons {
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.inputContainer input {
+  border: 0;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-bottom: solid black 1px;
+    &:hover{
+      color: black;
+    }
+  }
+}
+
+.recentPostsTitle {
+  padding: 25px 0 25px 0
+}
+
+.archives {
+  margin-bottom: 25px;
+}
+
+
