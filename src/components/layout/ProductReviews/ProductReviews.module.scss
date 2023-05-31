@@ -1,0 +1,114 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+
+  .reviews-container {
+    border-left: 1px solid $textAlmostTransparent;
+  }
+
+  .email-segment {
+    height: 50px;
+    * {
+      height: 100%;
+    }
+
+  }
+
+  .tab {
+    border: 1px solid $textAlmostTransparent;
+    border-top: none;
+    border-left: none;
+    padding: 20px 35px 80px 35px;
+  }
+
+  .review-form {
+    color: $textHalfOpacity;
+
+    input, textarea {
+      border-radius: 0;
+      font-size: 0.9em;
+    }
+  }
+
+  .form-button {
+    background: $text-color;
+    color: $text-light;
+    font-weight: 600;
+    border-radius: 0;
+    width: 95%;
+    transition: $fade-duration;
+    &:hover {
+      font-size: 1.05em;
+      border: none;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    border-right: 1px solid $textAlmostTransparent;
+    border-top: 1px solid $textAlmostTransparent;
+    li {
+      width:14%;
+      text-align: center;
+      list-style: none;
+      color: $text-color;
+      text-transform: uppercase;
+      font-size: 14px;
+      padding: 1rem;
+      text-decoration: none;
+      border: 1px solid $textAlmostTransparent;
+      border-left: none;
+      border-top: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      p {
+        margin: 0;
+      }
+
+      &:hover,
+      &.active {
+        color: $primary;
+        transition: $button-transition;
+        *{
+          animation: animation $button-animation-time forwards;
+        }
+      }
+      &.active {
+        border-bottom: none;
+      }
+
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    .stars {
+      margin: 0 15px 0 15px;
+      button {
+        font-size:0.9rem;
+        padding: 1px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .on {
+        color: $primary;
+      }
+      .off {
+        color: #ccc;
+      }
+
+    }
+
+  }
+
+
+}
