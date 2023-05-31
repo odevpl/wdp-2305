@@ -4,15 +4,15 @@
   padding: $base-padding 0;
 }
 
-.blogBox img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  object-position: bottom;
+.blogBox p {
+  margin-top: 30px;
 }
 
-.blogBox p {
-  margin-top: 25px;
+.blogBox img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .iconsContainer {
@@ -20,40 +20,27 @@
   justify-content: space-between;
   align-items: center;
   span {
-    padding-right: 15px;
+    padding-right: 20px;
   }
 }
 
 .iconsContainer{
   text-align:center;
   padding: 10px;
-  border-top: solid black 1px;
-  border-bottom: solid black 1px;
+  border-top: solid $darkCharcoalGray 1px;
+  border-bottom: solid $darkCharcoalGray 1px;
 
 
   .icons {
     cursor: pointer;
     &:hover {
-      color: black;
+      color: $goldenBrown;
     }
   }
 }
 
 .inputContainer input {
   border: 0;
-}
-
-.postList {
-  list-style: none;
-  padding: 0;
-  li {
-    margin-bottom: 10px;
-    cursor: pointer;
-    border-bottom: solid black 1px;
-    &:hover{
-      color: black;
-    }
-  }
 }
 
 .recentPostsTitle {
@@ -64,4 +51,16 @@
   margin-bottom: 25px;
 }
 
+.postList {
+  list-style: none;
+  padding: 0;
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-bottom: solid $darkCharcoalGray 1px;
+    &:hover{
+      color: $goldenBrown;
+    }
+  }
+}
 
