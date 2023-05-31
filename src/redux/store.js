@@ -3,14 +3,17 @@ import initialState from './initialState';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
+import promotionsReducer from './promotionsRedux';
 import brandsReducer from './brandsRedux';
 import promotedReducer from './promotedRedux';
+
 
 // define reducers
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
+  promotions: promotionsReducer,
   brands: brandsReducer,
   promoted: promotedReducer,
 };

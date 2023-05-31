@@ -347,6 +347,12 @@ const initialState = {
     products: [],
   },
 
+  promotions: [
+    { id: '1', source: '/promotions/1.jpg' },
+    { id: '2', source: '/promotions/2.jpg' },
+    { id: '3', source: '/promotions/3.jpg' },
+  ],
+
   deals: [
     {
       id: 1,
