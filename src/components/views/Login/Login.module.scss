@@ -1,0 +1,113 @@
+.loginContainer {
+  background: #455f78;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.formContainer {
+  background: #fff;
+  padding: 40px;
+  max-width: 600px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+}
+
+.loginHeader {
+  background: linear-gradient(to right, #f89a0b, #faa002);
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.loginForm {
+  margin-top: 40px;
+}
+
+.loginForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.loginForm input[type='text'],
+.loginForm input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.loginForm .forgotPassword {
+  color: #0099ff;
+  text-decoration: underline;
+}
+
+.loginForm .passwordRecovery {
+  margin-top: 10px;
+}
+
+.loginForm .passwordRecovery a {
+  color: #0099ff;
+  text-decoration: none;
+}
+
+.loginForm .passwordRecovery a:hover {
+  text-decoration: underline;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonContainer button {
+  background: linear-gradient(to bottom, #f8db19, #fa9f03);
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.buttonContainer button:hover {
+  background: linear-gradient(to bottom, #fa9f03, #f8db19);
+}
+
+@media (max-width: 1200px) {
+  .formContainer {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .formContainer {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .loginHeader {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+@media (max-width: 300px) {
+  .loginContainer {
+    padding: 10px;
+  }
+}
