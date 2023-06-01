@@ -16,7 +16,7 @@ const CompareContainer = ({ productsToCompare }) => {
               <p className={styles.productName}>{product.name}</p>
               <p className={styles.productPrice}>Price: {product.price}</p>
               <p className={styles.productFavorite}>
-                {product.isFavorite ? 'Favorite' : 'Not Favorite'}
+                {product.favorite ? 'Favorite' : 'Not Favorite'}
               </p>
             </div>
           </div>
