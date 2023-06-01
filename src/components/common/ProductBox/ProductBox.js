@@ -18,7 +18,6 @@ import ProductPopup from '../ProductPopop/ProductPopop';
 import { createPortal } from 'react-dom';
 import Stars from '../Stars/Stars';
 
-
 const ProductBox = ({
   name,
   price,
@@ -79,7 +78,9 @@ const ProductBox = ({
         </div>
       </div>
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <Link to={id}>
+          <h5>{name}</h5>
+        </Link>
         <Stars stars={stars} userStars={userStars} id={id} />
       </div>
       <div className={styles.line}></div>
@@ -139,7 +140,6 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   variant: PropTypes.string,
   userStars: PropTypes.number,
-
 };
 
 export default ProductBox;
