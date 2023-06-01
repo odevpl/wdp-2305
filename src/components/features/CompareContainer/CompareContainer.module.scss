@@ -25,9 +25,34 @@
         border-radius: 5px;
         object-fit: cover;
     }
-
 }
 
 .title {
     color: $primary;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: xx-small;
+    padding-left: 10px;
+    color: white;
+}
+
+.productName {
+    margin: 0;
+}
+
+.productPrice {
+    margin: 0;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productFavorite {
+    margin: 0;
+    color: white;
 }
