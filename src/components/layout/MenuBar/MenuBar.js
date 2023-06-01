@@ -47,7 +47,7 @@ const MenuBar = ({ children }) => {
             </div>
           </div>
 
-          <div className={'col-6 justify-content-center ' + styles.menu}>
+          <div className={'col-6 justify-content-center py-1 ' + styles.menu}>
             {isListOpen && (
               <ul className={styles.list + ' flex-column flex-sm-row'}>
                 <li>
