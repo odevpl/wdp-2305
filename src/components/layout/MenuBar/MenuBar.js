@@ -36,9 +36,9 @@ const MenuBar = ({ children }) => {
         isListOpen && window.innerWidth < 576 ? styles.one : ''
       }`}
     >
-      <div className='container pb-5 pb-xl-0 d-inline'>
-        <div className='row justify-content-center'>
-          <div className='col-lg d-flex justify-content-center order-1 order-xl-0 pt-2 pt-xl-0'>
+      <div className='container pb-xl-0'>
+        <div className='row justify-content-center py-2'>
+          <div className='col-xl-6 d-flex justify-content-center align-items-center order-1 order-xl-0 pt-xl-0'>
             <ProductSearch />
             <div className={`${styles.iconContainer} d-sm-none`}>
               <a href='#' onClick={toggleList}>
@@ -47,7 +47,7 @@ const MenuBar = ({ children }) => {
             </div>
           </div>
 
-          <div className={'col-auto ' + styles.menu}>
+          <div className={'col-6 justify-content-center ' + styles.menu}>
             {isListOpen && (
               <ul className={styles.list + ' flex-column flex-sm-row'}>
                 <li>
