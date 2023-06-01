@@ -10,7 +10,16 @@ const CompareContainer = ({ productsToCompare }) => {
       <h5 className={styles.title}>Products to compare</h5>
       <div className={styles.list}>
         {productsToCompare.map(product => (
-          <CompareBox key={product.id} product={product} />
+          <div key={product.id} className={styles.compareItem}>
+            <CompareBox product={product} />
+            <div className={styles.productInfo}>
+              <p className={styles.productName}>{product.name}</p>
+              <p className={styles.productPrice}>Price: {product.price}</p>
+              <p className={styles.productFavorite}>
+                {product.favorite ? 'Favorite' : 'Not Favorite'}
+              </p>
+            </div>
+          </div>
         ))}
         <Button variant='small'>Compare</Button>{' '}
       </div>
