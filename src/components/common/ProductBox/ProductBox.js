@@ -4,21 +4,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { favoriteProduct } from '../../../redux/productsRedux';
+
 import {
   getProductsToCompare,
   addProductToCompare,
 } from '../../../redux/productsRedux';
 import ProductPopup from '../ProductPopop/ProductPopop';
 import { createPortal } from 'react-dom';
+import Stars from '../Stars/Stars';
 
 const ProductBox = ({
   name,
@@ -29,6 +27,7 @@ const ProductBox = ({
   id,
   oldPrice = null,
   compare,
+  userStars,
   variant,
 }) => {
   const classes = [];
@@ -82,17 +81,7 @@ const ProductBox = ({
         <Link to={id}>
           <h5>{name}</h5>
         </Link>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <Stars stars={stars} userStars={userStars} id={id} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -124,7 +113,7 @@ const ProductBox = ({
             </div>
           )}
           <div className={styles.price}>
-            <Button noHover variant='small'>
+            <Button className={styles.priceButton} noHover variant='small'>
               $ {price}
             </Button>
           </div>
@@ -150,6 +139,7 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   id: PropTypes.string,
   variant: PropTypes.string,
+  userStars: PropTypes.number,
 };
 
 export default ProductBox;
