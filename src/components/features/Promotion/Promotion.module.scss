@@ -3,6 +3,9 @@
 .root {
   background-color: #ffffff;
   padding-bottom: 3em;
+  img {
+    object-fit: contain;
+  }
   .cardContainer{
     display: flex;
     flex-direction: column;
