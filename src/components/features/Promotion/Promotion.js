@@ -14,8 +14,8 @@ const Promotion = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className={'col-md-6 ' + styles.card}>
-            <div className={'card ' + styles.first_card}>
+          <div className={'col-lg-6 ' + styles.cardCol}>
+            <div className='card'>
               <div className={'card-body ' + styles.photo}>
                 <img
                   className={styles.photo}
@@ -25,9 +25,9 @@ const Promotion = () => {
               </div>
             </div>
           </div>
-          <div className={'col-md-6 ' + styles.cardContainer}>
+          <div className={'col-lg-6 ' + styles.cardContainer}>
             <div className={'row ' + styles.cardRow}>
-              <div className='card'>
+              <div className={'card ' + styles.card}>
                 <div className={'card-body ' + styles.photo}>
                   <img
                     className={styles.photo}
@@ -38,7 +38,7 @@ const Promotion = () => {
               </div>
             </div>
             <div className={'row ' + styles.cardRow}>
-              <div className='card'>
+              <div className={'card ' + styles.card}>
                 <div className={'card-body ' + styles.photo}>
                   <img
                     className={styles.photo}
