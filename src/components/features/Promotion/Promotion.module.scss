@@ -3,17 +3,20 @@
 .root {
   background-color: #ffffff;
   
-  margin-bottom: 2rem;
-
+  .cardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
   .card {
-    width: 36rem; 
-    height: 9rem; 
-    margin: 1rem;
+    @media (max-width: 768px){
+      padding-bottom: 1em;
+    }
   }
   .first_card{
-    height: 20em;
-    margin-left: 0;
-    margin-right: 2rem;
+    
   }
   .photo {
     margin: 0;
@@ -23,6 +26,10 @@
     object-fit: cover;
   }
   .cardRow {
-    margin-left: 2rem;
+    width: 100%;
+    @media (max-width: 768px){
+      padding-bottom: 1em;
+    }
+
   }
 }
