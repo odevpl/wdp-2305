@@ -124,7 +124,7 @@ const ProductPopup = ({ closePopup, name, oldPrice, price, stars, userStars, id 
             </div>
             <div className={styles.line}></div>
             <div className={styles.prices}>
-              <div className={styles.oldPrice}>$ {oldPrice}</div>
+              <div className={styles.oldPrice}>$ 100</div>
               <div className={styles.price}>$ {price}</div>
             </div>
             <div className={styles.line}></div>
