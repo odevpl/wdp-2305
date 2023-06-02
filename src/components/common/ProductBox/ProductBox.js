@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import clsx from 'clsx';
@@ -17,14 +17,15 @@ import {
 import ProductPopup from '../ProductPopop/ProductPopop';
 import { createPortal } from 'react-dom';
 import Stars from '../Stars/Stars';
+import useLocalStorage from 'use-local-storage';
 
 const ProductBox = ({
+  id,
   name,
   price,
   promo,
   stars,
   favorite,
-  id,
   oldPrice = null,
   compare,
   userStars,
@@ -45,8 +46,14 @@ const ProductBox = ({
     }
   };
 
-  const handleClickFavorite = id => {
-    dispatch(favoriteProduct(id));
+  const [isFavorite, setIsFavorite] = useLocalStorage(id, favorite || false);
+
+  useEffect(() => {
+    dispatch(favoriteProduct(favorite));
+  }, [dispatch, favorite, isFavorite]);
+
+  const handleClickFavorite = () => {
+    setIsFavorite(!isFavorite);
   };
 
   const handleQuickView = () => {
@@ -87,7 +94,7 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            favorite={favorite}
+            favorite={isFavorite}
             variant='outline'
             onClick={e => {
               e.preventDefault();
