@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import clsx from 'clsx';
@@ -9,7 +9,6 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { favoriteProduct } from '../../../redux/productsRedux';
-
 import {
   getProductsToCompare,
   addProductToCompare,
@@ -17,6 +16,7 @@ import {
 import ProductPopup from '../ProductPopop/ProductPopop';
 import { createPortal } from 'react-dom';
 import Stars from '../Stars/Stars';
+import useLocalStorage from 'use-local-storage';
 
 const ProductBox = ({
   name,
@@ -45,8 +45,14 @@ const ProductBox = ({
     }
   };
 
-  const handleClickFavorite = id => {
-    dispatch(favoriteProduct(id));
+  const [isFavorite, setIsFavorite] = useLocalStorage(id, favorite || false);
+
+  useEffect(() => {
+    dispatch(favoriteProduct(favorite));
+  }, [dispatch, favorite, isFavorite]);
+
+  const handleClickFavorite = () => {
+    setIsFavorite(!isFavorite);
   };
 
   const handleQuickView = () => {
@@ -87,7 +93,7 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            favorite={favorite}
+            favorite={isFavorite}
             variant='outline'
             onClick={e => {
               e.preventDefault();
