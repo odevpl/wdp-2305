@@ -83,11 +83,11 @@ class NewFurniture extends Component {
   };
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, rows } = this.props;
     const { activeCategory, activePage, itemsPerRow, viewportWidth, fade } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / (itemsPerRow * 2));
+    const pagesCount = Math.ceil(categoryProducts.length / itemsPerRow / rows);
     const productsToCompare = products.filter(item => item.compare === true);
 
     const dots = [];
@@ -142,8 +142,8 @@ class NewFurniture extends Component {
             >
               {categoryProducts
                 .slice(
-                  activePage * (itemsPerRow * 2),
-                  (activePage + 1) * (itemsPerRow * 2)
+                  activePage * itemsPerRow * rows,
+                  (activePage + 1) * itemsPerRow * rows
                 )
                 .map(item => (
                   <div key={item.id} className={`col-${12 / itemsPerRow}`}>
@@ -179,6 +179,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool.isRequired,
     })
   ),
+  rows: PropTypes.number.isRequired,
 };
 
 NewFurniture.defaultProps = {
