@@ -4,6 +4,8 @@
   display: inline-flex;
   height: 45px;
   color: $text-color;
+  width: 100%;
+  position: relative;
 
   .category>.dropdown>.dropdown-btn {
     -webkit-appearance: none;
@@ -65,7 +67,7 @@
   }
 
   .category>.dropdown {
-    margin:0 auto;
+    margin: 0 auto;
   }
 
   .category {
@@ -73,7 +75,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    min-width: 205px;
+    min-width: fit-content;
 
     .icon:first-child {
       color: $primary;
@@ -107,7 +109,6 @@
     display: flex;
     align-items: center;
     position: relative;
-
     input {
       border: 0;
       padding-left: 10px;
@@ -125,11 +126,14 @@
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
+
   input {
     border: 0;
     padding-left: 10px;
     font-size: 14px;
     outline: none;
+    width: 100%;
     &::placeholder {
       color: $text-color;
     }
@@ -141,5 +145,8 @@
     background-color: transparent;
     outline: none;
     color: $text-color;
+    &:hover{
+      color: $primary;
+    }
   }
 }
