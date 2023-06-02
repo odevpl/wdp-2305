@@ -114,9 +114,13 @@ const ProductPopup = ({ closePopup, name, oldPrice, price, stars, userStars, id 
               <div className={styles.stars}>
                 <Stars stars={stars} userStars={userStars} id={id} />
               </div>
-              <Link className={styles.reviewLink}>(0 reviews)</Link>
+              <Link to='/reviews' className={styles.reviewLink}>
+                (0 reviews)
+              </Link>
               <div className={styles.verticalLine}>&#124;</div>
-              <Link className={styles.reviewLink}>Add Your Review</Link>
+              <Link to='/reviews' className={styles.reviewLink}>
+                Add Your Review
+              </Link>
             </div>
             <div className={styles.line}></div>
             <div className={styles.prices}>
