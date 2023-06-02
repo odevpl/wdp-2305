@@ -14,8 +14,6 @@ const MenuBar = ({ children }) => {
     setIsListOpen(!isListOpen);
   };
 
-  const isSmallScreen = window.innerWidth < 576;
-
   useEffect(() => {
     const handleResize = () => {
       const isSmallScreen = window.innerWidth < 576;
