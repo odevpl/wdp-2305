@@ -14,6 +14,8 @@ const MenuBar = ({ children }) => {
     setIsListOpen(!isListOpen);
   };
 
+  const isSmallScreen = window.innerWidth < 576;
+
   useEffect(() => {
     const handleResize = () => {
       const isSmallScreen = window.innerWidth < 576;
@@ -31,11 +33,7 @@ const MenuBar = ({ children }) => {
   }, [isListOpen]);
 
   return (
-    <div
-      className={`${styles.root} ${
-        isListOpen && window.innerWidth < 576 ? styles.one : ''
-      }`}
-    >
+    <div className={`${styles.root} ${window.innerWidth < 576 ? styles.one : ''}`}>
       <div className='container pb-xl-0'>
         <div className='row justify-content-center py-2'>
           <div className='col-xl-6 d-flex justify-content-center align-items-center order-1 order-xl-0 pt-xl-0'>
@@ -46,8 +44,7 @@ const MenuBar = ({ children }) => {
               </a>
             </div>
           </div>
-
-          <div className={'col-6 justify-content-center py-1 ' + styles.menu}>
+          <div className={'col-6 justify-content-center ' + styles.menu}>
             {isListOpen && (
               <ul className={styles.list + ' flex-column flex-sm-row'}>
                 <li>
