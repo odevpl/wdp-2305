@@ -82,6 +82,14 @@
   background: linear-gradient(to bottom, #fa9f03, #f8db19);
 }
 
+.error {
+  color: red;
+  text-align: center;
+  display: block;
+}
+
+
+
 @media (max-width: 1200px) {
   .formContainer {
     width: 90%;
