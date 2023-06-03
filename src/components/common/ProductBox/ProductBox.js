@@ -45,7 +45,6 @@ const ProductBox = ({
       dispatch(addProductToCompare(id));
     }
   };
-
   const [isFavorite, setIsFavorite] = useLocalStorage(id, favorite || false);
 
   useEffect(() => {
