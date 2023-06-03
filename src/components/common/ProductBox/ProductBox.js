@@ -35,6 +35,7 @@ const ProductBox = ({
   else classes.push('buttons');
 
   const dispatch = useDispatch();
+
   const compareProducts = useSelector(state => getProductsToCompare(state));
   const [showPopup, setShowPopup] = useState(false);
 
@@ -48,8 +49,8 @@ const ProductBox = ({
   const [isFavorite, setIsFavorite] = useLocalStorage(id, favorite || false);
 
   useEffect(() => {
-    dispatch(favoriteProduct(favorite));
-  }, [dispatch, favorite, isFavorite]);
+    dispatch(favoriteProduct({ id, favorite: isFavorite }));
+  }, [dispatch, id, isFavorite]);
 
   const handleClickFavorite = () => {
     setIsFavorite(!isFavorite);
