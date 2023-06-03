@@ -9,7 +9,6 @@ export const getProductsToCompare = ({ products }) =>
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
-
 // action name creators
 
 const reducerName = 'products';
@@ -32,7 +31,6 @@ export const updateProductRate = payload => ({
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
-
     case ADD_TO_COMPARE:
       return statePart.map(product =>
         product.id === action.payload
@@ -41,10 +39,11 @@ export default function reducer(statePart = [], action = {}) {
       );
     case FAVORITE_PRODUCT:
       return statePart.map(product =>
-        product.id === action.payload
-          ? { 
-            ...product, favorite: !product.favorite
-           }
+        product.id === action.payload.id
+          ? {
+              ...product,
+              favorite: action.payload.favorite,
+            }
           : product
       );
     case UPDATE_PRODUCT_RATE:
