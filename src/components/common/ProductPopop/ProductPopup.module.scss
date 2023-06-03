@@ -1,3 +1,5 @@
+@import "../../../styles/settings.scss";
+
 .overlay {
   position: fixed;
   top: 0;
@@ -15,7 +17,7 @@
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   padding: 20px;
-  max-width: 800px;
+  max-width: 840px;
   display: flex;
   position: relative;
   z-index: 10000;
@@ -61,6 +63,313 @@ p {
   margin-bottom: 10px;
 }
 
-.description {
-  margin-top: 0;
+
+
+//test
+
+
+  .mainPhoto {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    margin-bottom: 15px;
+    padding: 10px 10px 10px 10px;
+  }
+  .bottomImagesContainer {
+    position: relative;
+  } 
+  .smallImages {
+    display: flex;
+    justify-content: space-around;
+  }  
+  .smallImage {
+    width: 85px;
+    height: 90px;
+  } 
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .buttonZoom {
+    position: absolute;
+    right: 400px;
+    bottom: 200px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .buttonLeft {
+    position: absolute;
+    top: 35%;
+    left: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    &:hover {
+      color: $white;
+      border: 1px solid $goldenBrown;
+      background-color: $goldenBrown;
+    }
+  }
+  .buttonRight {
+    position: absolute;
+    top: 35%;
+    right: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    &:hover {
+      color: $white;
+      border: 1px solid $goldenBrown;
+      background-color: $goldenBrown;
+    }
+  }
+
+
+
+
+.productHeader {
+  display: flex;
+  display: row;
+  justify-content: space-between;
+}
+
+.productParams {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  h5 {
+    margin-bottom: 0;
+    line-height: 12p;
+    font-weight: 600;
+  }
+  .arrowButtons {
+    display: flex;
+    .headerButtonLeft {
+      font-size: 12px;
+      line-height: 12px;
+    }
+    .headerButtonRight {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}
+
+.stars {
+  font-size: 12px;
+  display: flex;
+}
+
+.reviewLink {
+  margin: 0 10px;
+  color: $darkGray;
+  font-size: 11px;
+}
+
+.prices {
+  display: flex;
+  margin: 2px 0;
+  padding: 0;
+  .oldPrice{
+    font-size: 18px;
+    font-weight: 400;
+    color: $lightGray;
+    text-decoration: line-through;
+    text-decoration-color: $lightGray;
+    background: $white;
+    padding-left: 0;
+    margin-right: 10px;
+  }
+  .price {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: $darkGray;
+    padding: 2px 2px 2px 2px;
+    color: $white;
+  }
+}
+
+.line {
+  margin: 20px 0;
+  border-bottom: 1px solid $lightCharcoalGray;
+  position: relative;
+}
+
+.aboutProductButtons {
+  margin: 8px 0;
+  .actionButtons {
+    display: flex;
+    margin-bottom: 20px;
+    .addToCartBtn {
+      margin-right: 5px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .heartBtn {
+      margin-right: 5px;
+    }
+    .toggleBtn {
+      margin-right: 5px;
+    }
+  }
+}
+.quantityButtons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  align-content: center;
+  justify-content: baseline;
+
+  .quantityText {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 7px;
+  }
+
+  .quantityBtn {
+    margin-right: 5px;
+    width: 70px;
+    text-align: center;
+  }
+
+  .minusBtn {
+    margin-right: 5px;
+  }
+}
+
+.quickOverviewContainer {
+  h6 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .quickOverwiew {
+    font-size: 12px;
+    line-height: 20px;
+    color: $lightGray;
+  }
+}
+
+.quickOverviewContainer {
+  h6 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .quickOverwiew {
+    font-size: 12px;
+    line-height: 20px;
+    color: $lightGray;
+  }
+}
+
+
+.storage {
+  font-size: 12px;
+}
+
+.availability {
+  display: flex;
+
+  div:first-child {
+    width: 85px;
+  }
+}
+
+.category {
+  display: flex;
+  margin-top: 10px;
+
+  div:first-child {
+    width: 85px;
+  }
+}
+
+
+//test1
+.socialMedia {
+  display: flex;
+}
+
+.socialMediaBtn {
+  border-color: $veryLightGray;
+  color: $veryLightGray;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.socialMediaIcon {
+  margin-right: 5px;
+  font-size: 14px;
+
+  &.facebookIcon {
+    color: $facebook;
+  }
+
+  &.googlePlusIcon {
+    color: $google;
+  }
+
+  &.twitterIcon {
+    color: $twitter;
+  }
+
+  &.pinterestIcon {
+    color: $pinterest;
+  }
+
+  &.linkedInIcon {
+    color: $linkedin;
+  }
+}
+
+.socialMediaBtn:hover {
+  .socialMediaIcon {
+    color: $white;
+  }
+
+  &.facebook {
+    border-color: $facebook;
+    background-color: $facebook;
+    color: $white;
+  }
+
+  &.googlePlus {
+    border-color: $google;
+    background-color: $google;
+    color: $white;
+  }
+
+  &.twitter {
+    border-color: $twitter;
+    background-color: $twitter;
+    color: $white;
+  }
+
+  &.pinterest {
+    border-color: $pinterest;
+    background-color: $pinterest;
+    color: $white;
+  }
+
+  &.linkedin {
+    border-color: $linkedin;
+    background-color: $linkedin;
+    color: $white;
+  }
+}
+.buttonHover:hover {
+    color: $goldenBrown;
+    border: 1px solid $goldenBrown;
+    background-color: $white;
+  }
+  
+.buttonHoverFull:hover {
+  color: $white;
+  border: 1px solid $goldenBrown;
+  background-color: $goldenBrown;
 }

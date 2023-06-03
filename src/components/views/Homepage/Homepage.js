@@ -12,14 +12,13 @@ import ProductsGallery from '../../features/ProductsGallery/ProductsGallery';
 import Banner from '../../common/Banner/Banner';
 import Promoted from '../../features/Promoted/Promoted';
 
-
 const Homepage = () => (
   <div className={styles.root}>
     <Banner />
     <Promoted />
     <FeatureBoxes />
     <Promotion />
-    <NewFurniture />
+    <NewFurniture rows={2} />
     <ProductsGallery />
     <BlogFeature />
     <BrandsList />

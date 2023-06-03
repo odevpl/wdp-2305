@@ -37,7 +37,7 @@
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
+    background-color: $goldenBrown;
     color: #ffffff;
     transition: $button-transition;
     animation: animation $button-animation-time forwards;
